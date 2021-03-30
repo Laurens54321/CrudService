@@ -1,24 +1,35 @@
 package com.team13.product;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
+@Entity
 public class BarbequePart {
     @Id
+    private int id;
     private String name;
     private String description;
-    private int quantity;
-    private float cost;
+    private String url;
 
-    private String thumbnail_url;
+    private int quantity;
+    private float price;
+    private partType partType;
+
+    public enum partType{
+        housing,
+        wheels,
+        grill
+    }
 
     public BarbequePart() { }
 
-    public BarbequePart(String name, String description, int quantity, float cost, String thumbnail_url){
+    public BarbequePart(int id, String name, String description, int quantity, float price, String url, partType partType){
         setName(name);
         setDescription(description);
         setQuantity(quantity);
-        setCost(cost);
-        setThumbnail_url(thumbnail_url);
+        setPrice(price);
+        setUrl(url);
+        setPartType(partType);
     }
+
 
     public String getName() {
         return name;
@@ -44,19 +55,32 @@ public class BarbequePart {
         this.quantity = quantity;
     }
 
-    public float getCost() {
-        return cost;
+    public float getPrice() {
+        return price;
     }
 
-    public void setCost(float cost) {
-        this.cost = cost;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
-    public String getThumbnail_url() {
-        return thumbnail_url;
+    public String getUrl() {
+        return url;
     }
 
-    public void setThumbnail_url(String thumbnail_url) {
-        this.thumbnail_url = thumbnail_url;
+    public void setUrl(String url) {
+        this.url = url;
     }
+
+    public BarbequePart.partType getPartType() {
+        return partType;
+    }
+
+    public String getPartTypeString(){
+        return partType.toString();
+    }
+
+    public void setPartType(BarbequePart.partType partType) {
+        this.partType = partType;
+    }
+
 }

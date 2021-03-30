@@ -37,4 +37,8 @@ public class BarbequePartService {
     public void deleteProduct(BarbequePart barbequePart){
         barbequePartRepository.delete(barbequePart);
     }
+
+    public List<BarbequePart> getPartsOfCertainTypes(String typeString){
+        return barbequePartRepository.getPartsOfCertainTypes(typeString);
+    }
 }
