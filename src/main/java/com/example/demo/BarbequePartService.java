@@ -42,7 +42,6 @@ public class BarbequePartService {
 
     public void deleteAllProducts(){
         barbequePartRepository.deleteAll();
-        System.out.println("Deleted All Products");
     }
 
     public List<BarbequePart> getPartsOfCertainTypes(String typeString){
