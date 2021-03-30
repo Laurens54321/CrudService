@@ -40,6 +40,11 @@ public class BarbequePartService {
         barbequePartRepository.delete(barbequePart);
     }
 
+    public void deleteAllProducts(){
+        barbequePartRepository.deleteAll();
+        System.out.println("Deleted All Products");
+    }
+
     public List<BarbequePart> getPartsOfCertainTypes(String typeString){
         return barbequePartRepository.getPartsOfCertainTypes(typeString);
     }

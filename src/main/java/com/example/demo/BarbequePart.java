@@ -1,4 +1,6 @@
 package com.example.demo;
+import com.sun.istack.Nullable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 @Entity
@@ -11,12 +13,23 @@ public class BarbequePart {
 
     private int quantity;
     private float price;
+    @Nullable
     private partType partType;
 
     public enum partType{
         housing,
         wheels,
-        grill
+        grill;
+
+        @Override
+        public String toString() {
+            switch(this) {
+                case housing: return "Housing";
+                case wheels: return "Wheels";
+                case grill: return "Grill";
+                default: return "No Type Set";
+            }
+        }
     }
 
     public BarbequePart() { }

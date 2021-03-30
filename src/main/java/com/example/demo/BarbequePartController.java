@@ -28,6 +28,11 @@ public class BarbequePartController {
         return barbequePartService.getPartsOfCertainTypes(typeString);
     }
 
+    @GetMapping("/deleteAllProducts")
+    public void deleteAllProducts(){
+        barbequePartService.deleteAllProducts();
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "/addPart")
     public void addPart(@RequestBody BarbequePart barbequePart){
         barbequePartService.addProduct(barbequePart);
