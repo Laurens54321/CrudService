@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.bbqService.repo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

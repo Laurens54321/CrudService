@@ -1,5 +1,4 @@
-package com.example.demo;
-import com.sun.istack.Nullable;
+package com.bbqService.repo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +12,6 @@ public class BarbequePart {
 
     private int quantity;
     private float price;
-    @Nullable
     private partType partType;
 
     public enum partType{
