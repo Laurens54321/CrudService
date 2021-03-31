@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.metadata.Scope;
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin( origins = "http://localhost:8080", allowCredentials = "true")
 @RestController
 @RequestMapping("/api")
 public class BarbequePartController {
