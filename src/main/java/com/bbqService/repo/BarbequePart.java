@@ -6,9 +6,9 @@ import javax.persistence.Id;
 public class BarbequePart {
     @Id
     private int id;
-    private String name;
+    private String title;
     private String description;
-    private String url;
+    private String thumbnail_url;
 
     private int quantity;
     private float price;
@@ -32,13 +32,13 @@ public class BarbequePart {
 
     public BarbequePart() { }
 
-    public BarbequePart(int id, String name, String description, int quantity, float price, String url, partType partType){
+    public BarbequePart(int id, String title, String description, int quantity, float price, String thumbnail_url, partType partType){
         setId(id);
-        setName(name);
+        setTitle(title);
         setDescription(description);
         setQuantity(quantity);
         setPrice(price);
-        setUrl(url);
+        setthumbnail_url(thumbnail_url);
         setPartType(partType);
     }
 
@@ -50,12 +50,12 @@ public class BarbequePart {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -82,12 +82,12 @@ public class BarbequePart {
         this.price = price;
     }
 
-    public String getUrl() {
-        return url;
+    public String getthumbnail_url() {
+        return thumbnail_url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setthumbnail_url(String thumbnail_url) {
+        this.thumbnail_url = thumbnail_url;
     }
 
     public BarbequePart.partType getPartType() {
