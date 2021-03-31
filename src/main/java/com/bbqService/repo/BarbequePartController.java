@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.metadata.Scope;
 import java.util.List;
 
-@CrossOrigin( origins = "http://shopping-13-frontend-ucllteam13.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/")
+@CrossOrigin( origins = "http://shopping-13-frontend-ucllteam13.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/", allowCredentials = "true")
 @RestController
 @RequestMapping("/api")
 public class BarbequePartController {
