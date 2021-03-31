@@ -12,27 +12,13 @@ public class BarbequePart {
 
     private int quantity;
     private float price;
-    private partType partType;
+    private String partType;
 
-    public enum partType{
-        housing,
-        wheels,
-        grill;
 
-        @Override
-        public String toString() {
-            switch(this) {
-                case housing: return "Housing";
-                case wheels: return "Wheels";
-                case grill: return "Grill";
-                default: return "No Type Set";
-            }
-        }
-    }
 
     public BarbequePart() { }
 
-    public BarbequePart(int id, String title, String description, int quantity, float price, String thumbnail_url, partType partType){
+    public BarbequePart(int id, String title, String description, int quantity, float price, String thumbnail_url, String partType){
         setId(id);
         setTitle(title);
         setDescription(description);
@@ -90,16 +76,11 @@ public class BarbequePart {
         this.thumbnail_url = thumbnail_url;
     }
 
-    public BarbequePart.partType getPartType() {
+    public String getPartType(){
         return partType;
     }
 
-    public String getPartTypeString(){
-        return partType.toString();
-    }
-
-    public void setPartType(BarbequePart.partType partType) {
+    public void setPartType(String partType) {
         this.partType = partType;
     }
-
 }
