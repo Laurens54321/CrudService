@@ -14,3 +14,9 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://eu-de.appid.cloud.ibm.com/oauth/v4/5daf1985-1819-476b-ab90-8b5573442747
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
