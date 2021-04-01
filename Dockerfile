@@ -1,13 +1,8 @@
-FROM maven:3.6.3-jdk-11
-COPY ./ ./
-ARG JAR_FILE
-COPY ${JAR_FILE} "target/bbqService-0.0.1-SNAPSHOT.jar"
-RUN mvn clean package
+FROM openjdk:11-jre-alpine
 
-FROM openjdk:11-oracle
-VOLUME /tmp
-EXPOSE 8000
-RUN mkdir -p /app/
-RUN mkdir -p /app/logs/
-ADD target/bbqService-0.0.1-SNAPSHOT.jar /app/app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=container", "-jar", "/app/app.jar"]
+WORKDIR ${application.workdir}
+COPY ${application.dependencies} ${application.dependencies}
+COPY ${project.build.finalName}.jar ${project.build.finalName}.jar
+
+ENTRYPOINT ["/usr/bin/java", "-jar", "${project.build.finalName}.jar"]
+EXPOSE 8080
