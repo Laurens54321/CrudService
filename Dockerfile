@@ -1,3 +1,7 @@
+FROM maven:3.6.3-jdk-8
+COPY ./ ./
+RUN mvn clean package
+
 FROM openjdk:11-oracle
 VOLUME /tmp
 EXPOSE 8000
