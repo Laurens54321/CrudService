@@ -20,7 +20,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <application.mainclass>at.flortsch.example.docker.Main</application.mainclass>
         <application.dependencies>lib</application.dependencies>
-        <application.workdir>application</application.workdir>
+        <application.workdir>target</application.workdir>
     </properties>
     <dependencies>
         <dependency>
