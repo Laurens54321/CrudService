@@ -1,5 +1,5 @@
-FROM maven:3.6-openjdk-11 AS build
 EXPOSE 8000
+FROM maven:3.6-openjdk-11 AS build
 RUN mkdir /usr/src/project
 COPY . /usr/src/project
 WORKDIR /usr/src/project
