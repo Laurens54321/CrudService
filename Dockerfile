@@ -1,8 +1,6 @@
-FROM openjdk:11.0.6-jre
-
-WORKDIR ${application.workdir}
-COPY ${application.dependencies} ${application.dependencies}
-COPY ${project.build.finalName}.jar ${project.build.finalName}.jar
-
-ENTRYPOINT ["/usr/bin/java", "-jar", "${project.build.finalName}.jar"]
-EXPOSE 8080
+FROM openjdk:11-oracle
+EXPOSE 8000
+COPY . /usr/src/main/java/com/bbqService/repo/DemoApplication
+WORKDIR /usr/src/main/java/com/bbqService/repo/DemoApplication
+RUN javac Main.java
+CMD ["java", "Main"]
