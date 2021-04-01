@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-alpine
+FROM openjdk:8-jre-alpine
 
 WORKDIR ${application.workdir}
 COPY ${application.dependencies} ${application.dependencies}
